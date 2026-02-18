@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: memcached
+  labels:
+    app: memcached-adoc
+    type: server
+    owner: adoc
+spec:
+  containers:
+  - name: memcached-container
+    image: memcached

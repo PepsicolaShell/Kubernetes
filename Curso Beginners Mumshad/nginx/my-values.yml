@@ -1,0 +1,6 @@
+controller:
+  image:
+    image: dhi.io/nginx
+    tag: 1-debian13-dev
+imagePullSecrets: 
+  - name: dhi-regcred

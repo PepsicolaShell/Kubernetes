@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myapp-replicaset
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  template:
+    metadata:
+      name: yml
+      labels:
+        app: nginx-adoc
+        type: server
+        owner: adoc
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx
+  replicas: 1
+  selector: 
+    matchLabels:
+      owner: adoc

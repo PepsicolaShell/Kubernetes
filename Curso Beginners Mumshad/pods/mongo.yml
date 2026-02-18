@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mongo
+  labels:
+    app: mongo-adoc
+    type: server
+    owner: dfaj
+spec:
+  containers:
+  - name: mongo-container
+    image: mongo

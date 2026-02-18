@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bash
+  labels:
+    app: bash-adoc
+    type: server
+    owner: dfaj
+spec:
+  containers:
+  - name: bash-container
+    image: bash

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: httpd-frontend
+  labels:
+    tier: front-end
+    app: nginx
+spec:
+  template:
+    metadata:
+      name: nginx-2
+      labels:
+        app: nginx-adoc
+        type: server
+        owner: adoc
+    spec:
+      containers:
+      - name: nginx-container
+        image: httpd:2.4-alpine
+  replicas: 3
+  selector: 
+    matchLabels:
+      owner: adoc
