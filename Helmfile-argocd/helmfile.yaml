@@ -1,0 +1,8 @@
+repositories: [] # no usamos repos externos por ahora
+
+releases:
+  - name: namespace-bootstrap
+    namespace: default
+    chart: ./charts/namespace-bootstrap
+    values: 
+      - ./charts/namespace-bootstrap/values.yml

@@ -1,0 +1,10 @@
+namespaces:
+  - argocd
+  - cert-manager
+
+imagePullSecrets:
+  - name: dhi-regcred
+    registry: dhi.io
+    username: "adoc3214"
+    password: 'gnomodeJARDIN1!'
+    email: "floursackanimation77@gmail.com"
