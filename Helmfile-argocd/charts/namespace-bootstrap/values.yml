@@ -1,6 +1,7 @@
 namespaces:
   - argocd
   - cert-manager
+  - traefik
 
 imagePullSecrets:
   - name: dhi-regcred

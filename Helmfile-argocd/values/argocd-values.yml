@@ -1,0 +1,91 @@
+server:
+  certificate:
+    enabled: false
+  certificateSecret:
+    enabled: false
+  image:
+    repository: dhi.io/argocd
+    tag: "3"
+  imagePullSecrets: 
+    - name: dhi-regcred
+  ingress:
+    enabled: false
+
+
+controller:
+  image:
+    repository: dhi.io/argocd
+    tag: "3"
+  imagePullSecrets: 
+    - name: dhi-regcred
+
+repoServer:
+  image:
+    repository: dhi.io/argocd
+    tag: "3"
+  imagePullSecrets: 
+    - name: dhi-regcred
+
+dex:
+  enabled: false
+#  image:
+#    repository: dhi.io/argocd
+#    tag: "3"
+#  imagePullSecrets: 
+#    - name: dhi-regcred
+
+redis:
+  enabled: false
+#   image:
+#     repository: dhi.io/argocd
+#     tag: "3"
+#   imagePullSecrets: 
+#     - name: dhi-regcred
+
+redis-ha:
+  enabled: false
+#   image:
+#     repository: dhi.io/argocd
+#     tag: "3"
+#   imagePullSecrets: 
+#     - name: dhi-regcred
+
+exernalRedis:
+  enabled: false
+#   image:
+#     repository: dhi.io/argocd
+#     tag: "3"
+#   imagePullSecrets: 
+#     - name: dhi-regcred
+
+redisSecretInit:
+  enabled: false
+#   image:
+#     repository: dhi.io/argocd
+#     tag: "3"
+#   imagePullSecrets: 
+#     - name: dhi-regcred
+
+applicationSet:
+  enabled: false
+#   image:
+#     repository: dhi.io/argocd
+#     tag: "3"
+#   imagePullSecrets: 
+#     - name: dhi-regcred
+
+notifications:
+  enabled: false
+#   image:
+#     repository: dhi.io/argocd
+#     tag: "3"
+#   imagePullSecrets: 
+#     - name: dhi-regcred
+
+commitServer:
+  enabled: false
+#   image:
+#     repository: dhi.io/argocd
+#     tag: "3"
+#   imagePullSecrets: 
+#     - name: dhi-regcred

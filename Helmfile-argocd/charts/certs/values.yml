@@ -1,0 +1,22 @@
+ca:
+  name: argos-ca-issuer
+
+rootCert:
+  metadata:
+    name: argos-cacert
+    namespace: cert-manager
+  spec:
+    commonName: argos-root-cert
+    secretName: argos-ca-secret 
+
+clusterIssuer:
+  metadata: 
+    name: argos-ca-signer
+    #namespace?
+
+argocdCert:
+  metadata: 
+    name: argocd-server-tls
+    namespace: argocd
+  spec:
+    secretName: argocd-server-tls

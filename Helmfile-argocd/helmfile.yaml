@@ -1,4 +1,6 @@
-repositories: [] # no usamos repos externos por ahora
+repositories:
+  - name: argo
+    url: https://argoproj.github.io/argo-helm
 
 releases:
   - name: namespace-bootstrap
@@ -6,3 +8,38 @@ releases:
     chart: ./charts/namespace-bootstrap
     values: 
       - ./charts/namespace-bootstrap/values.yml
+
+  - name: cert-manager
+    namespace: cert-manager
+    chart: oci://dhi.io/cert-manager-chart
+    needs: 
+      - default/namespace-bootstrap  #el needs identifica releases por namespace. Si omitimos default 
+                                     # (ns donde esta namespace-bootstrap) lo buscara en el de esta release, es decir, cert-manager
+    version: 1.19.3
+    values:
+      - ./values/cert-manager-values.yaml
+
+  - name: certs
+    namespace: cert-manager
+    chart: ./charts/certs
+    needs: 
+      - cert-manager
+    values:
+      - ./charts/certs/values.yml
+
+  - name: traefik 
+    namespace: traefik
+    chart: oci://dhi.io/traefik-chart
+    version: 37.4.0
+    needs: 
+      - cert-manager/certs
+    values:
+      - ./values/traefik-values.yml
+
+  - name: argocd
+    namespace: argocd
+    chart: argo/argo-cd
+    needs:  
+      - traefik/traefik
+    values:
+      - ./values/argocd-values.yml

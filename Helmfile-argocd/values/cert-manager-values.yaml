@@ -1,0 +1,5 @@
+global:
+  imagePullSecrets:
+    - name: dhi-regcred
+crds:
+  enabled: true
